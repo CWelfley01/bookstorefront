@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+
+@import "./navbar.scss";
+@import "./add-book.scss";
+
+
 html {
     font-size: 62.5%; // 1rem is 10px
+    color: #3f4950;
 }
 
 *,
@@ -8,7 +15,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'montserrat';
+    font-family: 'Nunito';
 }
 
 body {
@@ -26,3 +33,4 @@ body {
     display: grid;
     justify-items: center;
 }
+
