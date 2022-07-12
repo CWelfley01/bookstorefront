@@ -2,11 +2,11 @@
 
 @import "./navbar.scss";
 @import "./add-book.scss";
-
+@import "./colors.scss";
 
 html {
     font-size: 62.5%; // 1rem is 10px
-    color: #3f4950;
+    color: $sacramentoGreen;
 }
 
 *,
