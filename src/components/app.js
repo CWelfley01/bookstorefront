@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Book from "./book";
+
 export default class App extends Component {
   constructor() {
     super();
@@ -12,31 +14,29 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:5000/book/get")
+      .get("https://caw-bookstore-api.herokuapp.com/book/get")
       .then((response) => {
         console.log(response);
-        this.setState({books: response.data})
+        this.setState({ books: response.data });
       })
       .catch((error) => {
         console.error(error);
       });
   }
 
-  renderBooks(){
-    return this.state.books.map(book => {
-      return(
-        <div key={book.id}>
-          <h1>Book Title: {book.name}</h1>
-        </div>
-      )
-    })
+  renderBooks() {
+    return this.state.books.map((book) => {
+      return <Book key={book.id} bookData={book} />;
+    });
   }
 
   render() {
     return (
       <div className="app">
         <h1>My Books</h1>
-        {this.renderBooks()}
+        <div className="container">
+          {this.renderBooks()}
+        </div>
       </div>
     );
   }

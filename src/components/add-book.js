@@ -6,26 +6,24 @@ export default function addBook() {
   const [author, setAuthor] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  
-  const postBook = () =>{
+
+  const postBook = (event) => {
     axios
-    .post("http://127.0.0.1:5000/book/add", {
+      .post("https://caw-bookstore-api.herokuapp.com/book/get", {
         name: name,
         author: author,
         price: price,
         description: description,
-    })
-    .then(response => console.log(response))
-    .catch(error => console.error(error));
-  }
-  
-  
-  
-  
+      })
+      .then((response) => console.log(response))
+      .catch((error) => console.error(error));
+    event.preventDefault();
+  };
+
   return (
     <div className="add-book">
       <h1 className="add-book-title">Enter a books data!</h1>
-      <form  className="add-book-form" onSubmit={postBook}>
+      <form className="add-book-form" onSubmit={postBook}>
         <input
           className="add-book-form-input"
           onChange={(event) => setName(event.target.value)}
@@ -50,7 +48,7 @@ export default function addBook() {
           type="text"
           placeholder="description"
         />
-        <button className="add-book-form-button" >Add book!</button>
+        <button className="add-book-form-button">Add book!</button>
       </form>
     </div>
   );
