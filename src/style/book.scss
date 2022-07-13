@@ -1,14 +1,10 @@
 .book-card{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 
 .cover-image{
     height:100%;
-}
-
-.book-info-container{
-
 }
