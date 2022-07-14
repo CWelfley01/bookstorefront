@@ -14,7 +14,10 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://caw-bookstore-api.herokuapp.com/book/get")
+      .get("http://127.0.0.1:5000/book/get", {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      }
+)
       .then((response) => {
         console.log(response);
         this.setState({ books: response.data });
