@@ -5,7 +5,7 @@ export default function Book(props) {
   const deleteBook = () => {
     axios
       .delete(
-        `http://127.0.0.1:5000
+        `https://caw-bookstore-api.herokuapp.com
         /book/${props.bookData.id}`
       )
       .then((response) => console.log("success", response));
