@@ -8,7 +8,12 @@ export default function Navbar() {
         <h1>My Book Collection!</h1>
       </div>
       <div className="navbar-links">
-        <NavLink exact className="navbar-link" activeClassName="selected" to="/">
+        <NavLink
+          exact
+          className="navbar-link"
+          activeClassName="selected"
+          to="/"
+        >
           Home
         </NavLink>
         <NavLink
