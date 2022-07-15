@@ -16,7 +16,7 @@ export default function addBook() {
 
   const postBook = (event) => {
     axios
-      .post("https://caw-bookstore-api.herokuapp.com/book/add", {
+      .post("http://caw-bookstore-api.herokuapp.com/book/add", {
         name: name,
         author: author,
         price: price,
