@@ -7,6 +7,13 @@ export default function addBook() {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
+  const clearState = () => {
+    setName("");
+    setAuthor("");
+    setPrice("");
+    setDescription("");
+  };
+
   const postBook = (event) => {
     axios
       .post("http://127.0.0.1:5000/book/add", {
@@ -14,9 +21,12 @@ export default function addBook() {
         author: author,
         price: price,
         description: description,
+      },{
+        headers: { "Access-Control-Allow-Origin": "*" },
       })
       .then((response) => console.log(response))
       .catch((error) => console.error(error));
+    clearState();
     event.preventDefault();
   };
 

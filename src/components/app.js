@@ -16,8 +16,7 @@ export default class App extends Component {
     axios
       .get("http://127.0.0.1:5000/book/get", {
         headers: { "Access-Control-Allow-Origin": "*" },
-      }
-)
+      })
       .then((response) => {
         console.log(response);
         this.setState({ books: response.data });
@@ -37,9 +36,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <h1>My Books</h1>
-        <div className="container">
-          {this.renderBooks()}
-        </div>
+        <div className="container">{this.renderBooks()}</div>
       </div>
     );
   }

@@ -5,8 +5,9 @@ export default function Book(props) {
   const deleteBook = () => {
     axios
       .delete(
-        `http://127.0.0.1:5000/book/${props.bookData.id}`
-      )
+        `http://127.0.0.1:5000/book/${props.bookData.id}`, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        })
       .then((response) => console.log("success", response));
   };
 
