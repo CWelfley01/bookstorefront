@@ -12,7 +12,7 @@ export default function Book(props) {
 
   return (
     <div className="book-info-container">
-      {/* <img src={props.bookData.img_url} /> */}
+      
       <h2>{props.bookData.name}</h2>
       <h3>{props.bookData.author}</h3>
       <h4>{props.bookData.description}</h4>
