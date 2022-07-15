@@ -15,9 +15,9 @@ export default function Book(props) {
       <img src={props.bookData.img_url} />
       <h2>{props.bookData.name}</h2>
       <h3>{props.bookData.author}</h3>
-      <h5>{props.bookData.description}</h5>
+      <h4>{props.bookData.description}</h4>
       <p>{props.bookData.price}</p>
-      <button onClick={deleteBook}>Delete Book</button>
+      <button onClick={deleteBook}>Delete</button>
     </div>
   );
 }
